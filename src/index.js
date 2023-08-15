@@ -1,3 +1,6 @@
+import { koalas } from './koalas'
+import { renderKoalaList } from './renderKoalaList'
+import { renderKoalaCard } from './renderKoalaCard'
 
 let activeKoala = null
 
@@ -18,21 +21,6 @@ let render = () => {
     }
     newPage.classList.add('koala-container')
     oldPage.replaceWith(newPage)
-}
-
-
-// Renders a list of koalas
-let renderKoalaList = koalas => {
-    let koalaContainer = document.createElement('div')
-
-    koalaContainer.setAttribute('class', 'ui items')
-
-    koalas.forEach( koala => {
-        let koalaCard = renderKoalaCard(koala)
-        koalaContainer.append(koalaCard)
-    })
-
-    return koalaContainer
 }
 
 // Renders a card to display a single koala
